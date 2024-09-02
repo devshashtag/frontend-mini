@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  outline: none;
+  border: none;
+}
+
+:root {
+  --bg: #101010;
+  --fg: #f2f2f2;
+  --bg-clock: var(--bg);
+  --bg-clock-shadow: #202020;
+  --fg-clock-number: #e8ffa7;
+
+  --bg-hand-hour: #e8ffa7;
+  --bg-hand-minute: #69a9fc;
+  --bg-hand-second: #ff4d4d;
+}
+
+::-webkit-scrollbar {
+  background-color: #22262e;
+  color: #bcb4a8;
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a53;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #60676c;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #4f5659;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #16191b;
+}
+
+@font-face {
+  font-family: 'loopy';
+  src: url('../fonts/loopy.ttf') format('truetype');
+}
+
+html {
+  font-size: 0.625rem;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-size: 2rem;
+  font-family: 'loopy', monospace;
+
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.container {
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#world-clock {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.clock {
+  position: relative;
+  background: var(--bg-clock);
+  width: 30rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0.5rem var(--bg-clock-shadow), 0 0 5rem var(--bg-clock-shadow) inset;
+}
+
+.clock .number {
+  --rotation: 0;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  font-size: 2rem;
+  color: var(--fg-clock-number);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
+  transform: rotate(var(--rotation));
+}
+
+.clock .number span {
+  position: absolute;
+  transform: rotate(calc(var(--rotation) * -1));
+}
+
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.clock .hand {
+  --rotation: 0;
+
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  width: 0.1rem;
+
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.hour-hand {
+  position: relative;
+  height: 25%;
+  background-color: var(--bg-hand-hour);
+  box-shadow: 0 -0.5rem 1rem 0.1rem var(--bg-hand-hour);
+  z-index: 11;
+}
+
+.minute-hand {
+  position: absolute;
+  height: 35%;
+  background-color: var(--bg-hand-minute);
+  box-shadow: 0 -0.5rem 1rem 0.1rem var(--bg-hand-minute);
+  z-index: 10;
+}
+
+.second-hand {
+  position: absolute;
+  height: 40%;
+  background-color: var(--bg-hand-second);
+  box-shadow: 0 -0.5rem 1rem 0.1rem var(--bg-hand-second);
+  z-index: 12;
+}
+
+.clock::before {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5em;
+
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  background-color: var(--bg-hand-second);
+  box-shadow: 0 0 1rem 0.1rem var(--bg-hand-second);
+
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+#timezone {
+  background-color: var(--bg-clock);
+  font-family: monospace;
+  text-transform: capitalize;
+  color: var(--fg);
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 1rem var(--bg-clock-shadow) inset;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#timezone:hover {
+  box-shadow: 0 0 1rem var(--bg-clock-shadow), 0 0 1rem var(--bg-clock-shadow) inset;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 1rem;
+  }
+
+  #timezome {
+    width: 50%;
+  }
+}
