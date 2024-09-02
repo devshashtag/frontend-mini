@@ -1,0 +1,248 @@
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  transition: color 0.1s;
+  color: white;
+
+  &:hover {
+    color: #ffde71;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  font-size: 0.625rem;
+
+  @include breakpoint(md) {
+    font-size: 0.75rem;
+  }
+}
+
+body {
+  background-color: #d7dfea;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: relative;
+  background-color: #5d52f1;
+  box-shadow: 0 2px 2px #5d52f1;
+  gap: 1rem;
+
+  font-size: 1.6rem;
+
+  // logo text
+  .logo-text {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+
+  // navbar
+  .navbar {
+    flex: 1;
+    display: none;
+    justify-content: flex-end;
+    gap: 4rem;
+
+    &.active {
+      display: block;
+      background-color: #5d52f1;
+      padding: 3rem 0;
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 2px);
+
+      .link {
+        display: none;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        padding: 0 3rem;
+        li a {
+          background-color: #675bf5;
+          border-radius: 1rem;
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    li a {
+      text-transform: capitalize;
+      padding: 1rem 0;
+    }
+  }
+
+  .link > .logo-img {
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fcad18;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  // navbar-toggle
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    gap: 6px;
+
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+
+    &:hover span,
+    &.active span {
+      background-color: #6ad8e9;
+      border-radius: 2px;
+    }
+
+    span {
+      display: block;
+      height: 4px;
+      width: 3rem;
+      background-color: white;
+
+      transition: all 0.1s ease-in-out;
+    }
+
+    &.active {
+      .top {
+        transform: rotate(-45deg) translate(-8px, 7px);
+      }
+
+      .mid {
+        opacity: 0;
+      }
+
+      .bot {
+        transform: rotate(45deg) translate(-7px, -6px);
+      }
+    }
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 123rem;
+  margin: 0 auto;
+  padding: 3rem;
+  gap: 2rem;
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+  }
+
+  .category,
+  .content {
+    background-color: #eaeff6;
+    border-radius: 0.5rem;
+
+    font-size: 1.4rem;
+  }
+
+  .category {
+    padding: 3rem 2rem;
+    min-width: 20rem;
+    height: 55rem;
+
+    @include breakpoint(lg) {
+      height: 48rem;
+      min-width: 25rem;
+      font-size: 1.3rem;
+    }
+
+    .navbar {
+      height: 100%;
+    }
+
+    .nav-links {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      li {
+        flex: 1;
+        border-radius: 0.5rem;
+        background-color: #5d52f1;
+      }
+
+      a {
+        height: 100%;
+      }
+    }
+  }
+
+  .content {
+    height: 40rem;
+
+    @include breakpoint(lg) {
+      flex: 1;
+      height: 48rem;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    .logo-img {
+      height: 10rem;
+      background-color: #fcad18;
+      border-radius: 0.7rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      text-transform: capitalize;
+      font-weight: bold;
+      color: #675bf5;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+}
