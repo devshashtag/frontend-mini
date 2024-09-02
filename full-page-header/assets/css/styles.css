@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #252b43;
+  --fg-color: #ecedf1;
+  --is-active: #21a7ef;
+  --is-active-hover: #26efa7;
+  --max-width: 768px;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+header.header {
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-size: 1.6rem;
+}
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* menu */
+.header .header-menu {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  padding: 2rem 1rem;
+}
+
+.header-menu nav {
+  flex: 1;
+}
+
+.menu-brand a {
+  text-transform: capitalize;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--fg-color);
+}
+
+/* menu list */
+.menu-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+
+.menu-links li.is-active a {
+  color: var(--is-active);
+}
+
+.menu-links li a {
+  padding: 1rem;
+  color: var(--fg-color);
+  font-size: 1.3rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.menu-links li a:hover {
+  color: var(--is-active);
+}
+
+/* menu buttons */
+.menu-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-buttons button {
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  background-color: unset;
+  border: none;
+
+  color: var(--fg-color);
+
+  text-transform: capitalize;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* button icon */
+.menu-buttons button i {
+  padding-left: 1rem;
+}
+
+/* active button */
+.menu-buttons button.is-active {
+  text-transform: uppercase;
+  background-color: var(--is-active);
+  border-radius: 0.3rem;
+}
+
+.menu-buttons button.is-active:hover {
+  background-color: var(--is-active-hover);
+  color: black;
+}
+
+/* header body */
+.header-body {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+
+  font-family: sans-serif;
+}
+
+.header-body h2 {
+  font-size: 1.5rem;
+  color: var(--is-active);
+}
+
+.header-body h1 {
+  font-size: 5rem;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.header-body p {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.body-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.body-buttons button {
+  cursor: pointer;
+  padding: 1.2rem;
+  min-width: 15rem;
+  background-color: unset;
+  border: 1px solid var(--is-active);
+  border-radius: 0.2rem;
+}
+
+.body-buttons button a {
+  font-size: 1.3rem;
+}
+
+.body-buttons button.is-active {
+  background-color: var(--is-active);
+}
+
+.body-buttons button.is-active a {
+  color: var(--fg-color);
+}
+
+.body-buttons button a {
+  font-size: 1rem;
+  font-weight: bold;
+
+  color: var(--is-active);
+
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.body-buttons button:not(.is-active):hover {
+  background-color: var(--is-active-hover);
+}
+
+.body-buttons button:not(.is-active):hover a {
+  color: black;
+}
