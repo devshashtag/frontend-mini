@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg: #121212;
+  --fg-0: #ff3355;
+  --fg-1: #ff6633;
+  --fg-2: #ffe733;
+  --fg-3: #9cff33;
+  --fg-4: #33ff44;
+  --fg-5: #33ff99;
+  --fg-6: #33fff5;
+  --fg-7: #ff33fc;
+  --fg-8: #5233ff;
+  --fg-9: #ff3333;
+
+  --fg-ascii: #375e42;
+}
+
+html {
+  height: 100%;
+  font-size: 0.5rem;
+}
+
+@media (min-width: 425px) {
+  html {
+    font-size: 0.5625rem;
+  }
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 0.9375rem;
+  }
+}
+
+body {
+  font-size: 1rem;
+  background-color: var(--bg);
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  padding: 1rem;
+
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.ascii {
+  font-size: 1rem;
+  position: absolute;
+  left: var(--left);
+  top: -5rem;
+  color: var(--fg-ascii);
+  animation: move var(--duration) var(--delay) infinite;
+  animation-timing-function: linear;
+  z-index: -1;
+  width: 2rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+@keyframes move {
+  0% {
+    top: -5rem;
+  }
+  100% {
+    top: 100%;
+  }
+}
