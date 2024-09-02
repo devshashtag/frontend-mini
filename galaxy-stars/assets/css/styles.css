@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.board {
+  position: relative;
+  background-color: #000000;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transition: all 1s linear;
+  border-radius: 50%;
+}
