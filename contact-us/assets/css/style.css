@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  outline: none;
+  border: none;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+main.contact-us section > div[class$='-container'] {
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+section.contact-section {
+  background-color: #eaeaea;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  width: 100%;
+}
+
+.contact-box {
+  min-width: 70%;
+  background-color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.contact-image {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 50px 10px;
+}
+
+.contact-image img {
+  object-fit: cover;
+  width: 50%;
+  height: auto;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-title {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 2px #aaa;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  color: #666;
+  padding: 10px 20px;
+  line-height: 1.7;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.form-text {
+  resize: vertical;
+  max-height: 200px;
+  min-height: 100px;
+}
+
+.form-btn {
+  cursor: pointer;
+  width: 100%;
+  background: #846add;
+  padding: 15px 20px;
+  color: #fff;
+  transition: background 0.3s;
+  border-radius: 10px;
+}
+
+.form-btn:hover {
+  background: #333;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+  .contact-image {
+    display: none;
+  }
+
+  .contact-box {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-box {
+    min-width: 90%;
+  }
+
+  .contact-form {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-box {
+    min-width: 100%;
+    padding: 20px 5px;
+  }
+
+  .contact-form {
+    padding: 10px 20px;
+  }
+}

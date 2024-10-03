@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --present: 0;
+}
+
+html {
+  font-size: 0.5rem;
+}
+
+@media (min-width: 425px) {
+  html {
+    font-size: 0.5625rem;
+  }
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 0.9375rem;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #3a3a3a;
+  font-size: 1.6rem;
+  height: 100vh;
+}
+
+.chart {
+  height: 35rem;
+  border-radius: 0.5rem;
+  padding: 2rem 2rem .5rem;
+  background-color: #202020;
+  color: #fffea0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.chart__bars,
+.chart__titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.2rem;
+
+  height: 90%;
+}
+
+.chart__titles {
+  height: auto;
+  font-size: .7em;
+  text-align: center;
+}
+
+.chart__title,
+.item__bar {
+  width: 2.5rem;
+}
+
+.item__bar {
+  cursor: pointer;
+  border-radius: 0.2rem;
+  background-color: #aeaeae;
+  height: var(--present);
+
+  animation: animationBar 1s ease;
+}
+
+@keyframes animationBar {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--present);
+  }
+}
