@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- main -->
+    <main class="accounts">
+      <!-- register -->
+      <section class="register">
+        <form id="register" action="/register" method="post">
+          <!-- email -->
+          <div class="form-group">
+            <svg class="icon"><use href="assets/icons/person.svg#person"></svg>
+            <input type="email" name="email" id="email" placeholder="email" />
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <svg class="icon"><use href="assets/icons/lock-closed.svg#lock-closed"></svg>
+            <input type="password" name="password" id="password" placeholder="password" />
+          </div>
+
+          <!-- repeat password -->
+          <div class="form-group">
+            <svg class="icon"><use href="assets/icons/lock-closed.svg#lock-closed"></svg>
+            <input type="password" name="repeat-password" id="repeatPassword" placeholder="repeat password" />
+          </div>
+
+          <!-- submit -->
+          <button type="submit" class="submit" id="submit">sign up</button>
+        </form>
+      </section>
+
+      <!-- notification -->
+       <div class="notifications">
+        <ul class="notification-list" id="notificationList">
+            <!-- <li class="notification show">example.</li> -->
+        </ul>
+       </div>
+    </main>
+
+    <!-- scripts -->
+    <script type="module" src="assets/js/script.js"></script>
+  </body>
+</html>
